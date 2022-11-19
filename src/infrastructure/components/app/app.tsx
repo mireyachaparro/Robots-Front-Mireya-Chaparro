@@ -1,3 +1,10 @@
+import { AppRoutes } from '../routes/app.routes';
+
 export function App() {
-    return <p>Estamos en ello</p>;
+    return (
+        <>
+            <AppRoutes></AppRoutes>
+            <p>Estamos en ello</p>
+        </>
+    );
 }

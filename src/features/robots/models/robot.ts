@@ -15,9 +15,12 @@ export type Robot = {
     date: string;
 };
 
-// export class RobotModel implements ProtoRobot {
-//     isComplete: boolean;
-//     constructor(public title: string, public responsible: string) {
-//         this.isComplete = false;
-//     }
-// }
+export class RobotModel implements ProtoRobot {
+    constructor(
+        public name: string,
+        public img: string,
+        public speed: number,
+        public resistance: number,
+        public date: string
+    ) {}
+}
