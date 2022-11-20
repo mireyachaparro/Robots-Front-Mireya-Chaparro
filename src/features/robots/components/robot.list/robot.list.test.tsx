@@ -12,7 +12,7 @@ describe('Given RobotList component', () => {
         robots: [
             {
                 ...new RobotModel('prueba', '123.jpg', 1, 2, '2000'),
-                id: 1,
+                id_front: 1,
             },
         ],
     };

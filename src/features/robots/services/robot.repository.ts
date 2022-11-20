@@ -7,7 +7,7 @@ export class RobotRepository implements Repository<Robot> {
         // this.url = url ? url : (process.env.REACT_APP_URL_ROBOTS as string);
         this.url = url
             ? url
-            : 'https://two02210-w7ch5-mireya-chaparro.onrender.com';
+            : 'https://two02210-w7ch5-mireya-chaparro.onrender.com/robots';
     }
 
     #createError(response: Response) {
@@ -50,7 +50,7 @@ export class RobotRepository implements Repository<Robot> {
 
     // uptate / patch
     update(partialRobot: Partial<Robot>): Promise<Robot> {
-        return fetch(`${this.url}/${partialRobot.id}`, {
+        return fetch(`${this.url}/${partialRobot.id_front}`, {
             method: 'PATCH',
             body: JSON.stringify(partialRobot),
             headers: {

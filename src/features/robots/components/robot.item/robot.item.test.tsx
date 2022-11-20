@@ -16,7 +16,7 @@ describe('Given RobotItem component', () => {
         robots: [
             {
                 ...new RobotModel('prueba', '123.jpg', 1, 2, '2000'),
-                id: 1,
+                id_front: 1,
             },
         ],
     };
@@ -31,7 +31,7 @@ describe('Given RobotItem component', () => {
         beforeEach(() => {
             const mockRobot = {
                 ...new RobotModel('prueba', '123.jpg', 1, 2, '2000'),
-                id: 1,
+                id_front: 1,
             };
             (useRobots as jest.Mock).mockReturnValue({
                 handleDelete: jest.fn(),
