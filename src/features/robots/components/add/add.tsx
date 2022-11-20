@@ -12,11 +12,11 @@ type formData = {
 export function Add() {
     const title = 'Añadir robot';
     const initialState: formData = {
-        name: 'prueba',
-        img: '123.jpg',
-        speed: 1,
-        resistance: 2,
-        date: '2000',
+        name: '',
+        img: '',
+        speed: 0,
+        resistance: 0,
+        date: '',
     };
     const [formState, setFormState] = useState(initialState);
     const { handleAdd } = useRobots();
