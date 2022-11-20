@@ -86,7 +86,6 @@ describe('Given the custom hook userobots', () => {
             } = renderHook(() => useRobots(), { wrapper }));
         });
 
-        // test('Then the state is accesible by the hook', async () => {
         test(`Then hook call to the repository for the initial data
                 and dispatch an action for load the data in the state`, async () => {
             current.handleLoad();
@@ -95,7 +94,6 @@ describe('Given the custom hook userobots', () => {
 
         test(`Then the hock call to the repository to add a new robot 
             and dispatch an action for add the robot to the state`, async () => {
-            // Datos iniciales definidos en preloadedState
             expect(current.robots).toEqual([]);
             current.handleAdd(mockProtoRobot);
             expect(RobotRepository.prototype.create).toHaveBeenCalled();
@@ -103,7 +101,6 @@ describe('Given the custom hook userobots', () => {
 
         test(`Then the hock call to the repository to update a robot
             and dispatch an action for update the robot in the state`, async () => {
-            // Datos iniciales definidos en preloadedState
             expect(current.robots).toEqual([]);
             current.handleUpdate(mockUpdatedRobot);
             await waitFor(() => {
@@ -113,7 +110,6 @@ describe('Given the custom hook userobots', () => {
 
         test(`Then the hock call to the repository to delete a robot
             and dispatch an action for delete the robot from the state`, async () => {
-            // Datos iniciales definidos en preloadedState
             expect(current.robots).toEqual([]);
             current.handleDelete(1);
             await waitFor(() => {
