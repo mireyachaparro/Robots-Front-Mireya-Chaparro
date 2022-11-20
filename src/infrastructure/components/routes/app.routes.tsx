@@ -8,6 +8,8 @@ export function AppRoutes() {
         <Suspense>
             <Routes>
                 <Route path="home" element={<Robots></Robots>}></Route>
+                <Route path="" element={<Robots></Robots>}></Route>
+                <Route path="*" element={<Navigate replace to="" />}></Route>
             </Routes>
         </Suspense>
     );
