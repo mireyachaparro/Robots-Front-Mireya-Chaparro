@@ -45,24 +45,24 @@ describe('Given Add component and render it', () => {
             });
         });
     });
-    // describe('When the user type in the inputs', () => {
-    //     test('Then typed text in first input should be in the screen', () => {
-    //         const mockTyped = 'test';
-    //         const input = screen.getByRole(formElements[0].role, {
-    //             name: formElements[0].name,
-    //         });
-    //         userEvent.type(input, mockTyped);
-    //         expect(input).toHaveValue(mockTyped);
-    //     });
-    //     test('Then typed text in second input should be in the screen', () => {
-    //         const mockTyped = '123.jpg';
-    //         const input = screen.getByRole(formElements[1].role, {
-    //             name: formElements[0].name,
-    //         });
-    //         userEvent.type(input, mockTyped);
-    //         expect(input).toHaveValue(mockTyped);
-    //     });
-    // });
+    describe('When the user type in the inputs', () => {
+        test('Then typed text in first input should be in the screen', () => {
+            const mockTyped = 'prueba';
+            const input = screen.getByRole(formElements[0].role, {
+                name: formElements[0].name,
+            });
+            userEvent.type(input, mockTyped);
+            expect(input).toHaveValue(mockTyped);
+        });
+        test('Then typed text in second input should be in the screen', () => {
+            const mockTyped = '123.jpg';
+            const input = screen.getByRole(formElements[1].role, {
+                name: formElements[0].name,
+            });
+            userEvent.type(input, mockTyped);
+            expect(input).toHaveValue(mockTyped);
+        });
+    });
     describe('When the user clicks the button', () => {
         test('A method from the custom hook should be call', () => {
             const button = screen.getByRole(formElements[5].role);

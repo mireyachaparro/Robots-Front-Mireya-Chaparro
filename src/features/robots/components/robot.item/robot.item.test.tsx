@@ -56,11 +56,5 @@ describe('Given RobotItem component', () => {
             userEvent.click(element);
             expect(useRobots().handleDelete).toHaveBeenCalled();
         });
-        // test('Then it should have a check for complete', () => {
-        //     const element = screen.getByRole('checkbox');
-        //     expect(element).toBeInTheDocument();
-        //     userEvent.click(element);
-        //     expect(useRobots().handleUpdate).toHaveBeenCalled();
-        // });
     });
 });

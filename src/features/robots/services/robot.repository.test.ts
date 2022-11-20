@@ -33,7 +33,7 @@ describe('Given an instance of RobotApi Service', () => {
     describe('When we use service.createRobot()', () => {
         const mockRobot = new RobotModel('', '', 1, 1, '');
         test(`Then if all are OK,
-                it should return a Promise of the crated task`, async () => {
+                it should return a Promise of the crated robot`, async () => {
             const response = {
                 ok: true,
                 json: jest.fn().mockResolvedValue(mockRobot),
@@ -83,8 +83,8 @@ describe('Given an instance of RobotApi Service', () => {
     });
 
     describe('When we use service.update()', () => {
-        const mockUpdateTask = { id: 1, isComplete: true };
-        const mockFinalTask = {
+        const mockUpdateRobot = { id: 1, isComplete: true };
+        const mockFinalRobot = {
             ...new RobotModel('', '', 1, 1, ''),
             id: 1,
             isComplete: true,
@@ -93,15 +93,15 @@ describe('Given an instance of RobotApi Service', () => {
         test(`Then if all are OK, it should return a Promise of ...`, async () => {
             const response = {
                 ok: true,
-                json: jest.fn().mockResolvedValue(mockFinalTask),
+                json: jest.fn().mockResolvedValue(mockFinalRobot),
             };
             global.fetch = jest.fn().mockResolvedValue(response);
-            const result = await service.update(mockUpdateTask);
+            const result = await service.update(mockUpdateRobot);
             expect(fetch).toHaveBeenCalled();
-            expect(result).toEqual(mockFinalTask);
+            expect(result).toEqual(mockFinalRobot);
         });
         test(`Then if there are problems, it should throw an error`, async () => {
-            const mockUpdateTask = { id: 0 };
+            const mockUpdateRobot = { id: 0 };
             const response = {
                 ok: false,
                 status: 500,
@@ -109,7 +109,7 @@ describe('Given an instance of RobotApi Service', () => {
             };
             global.fetch = jest.fn().mockResolvedValue(response);
             await expect(
-                async () => await service.update(mockUpdateTask)
+                async () => await service.update(mockUpdateRobot)
             ).rejects.toThrow();
         });
     });

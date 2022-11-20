@@ -2,9 +2,9 @@ import { RobotModel } from './robot';
 
 describe('Given the class RobotModel', () => {
     describe('When we instantiate it', () => {
-        const task = new RobotModel('', '', 1, 1, '');
+        const robot = new RobotModel('', '', 1, 1, '');
         test('Then we should have an object ot the class', () => {
-            expect(task).toBeInstanceOf(RobotModel);
+            expect(robot).toBeInstanceOf(RobotModel);
         });
     });
 });
