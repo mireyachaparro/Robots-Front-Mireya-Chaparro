@@ -10,12 +10,14 @@ export function RobotItem({ item }: { item: Robot }) {
 
     return (
         <li>
-            <span>{item.id_front}</span>
-            <span>{item.img}</span>
-            <span>{item.name}</span>
-            <span className="button" onClick={handleClick} role="button">
+            <div>{item.id_front}</div>
+            <div>
+                <img src={item.img} alt={item.name} width="300px" />
+            </div>
+            <div>{item.name}</div>
+            <div className="button" onClick={handleClick} role="button">
                 🗑️
-            </span>
+            </div>
         </li>
     );
 }

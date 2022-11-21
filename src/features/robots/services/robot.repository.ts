@@ -4,10 +4,11 @@ import { Repository } from './repository';
 export class RobotRepository implements Repository<Robot> {
     url: string;
     constructor(url = '') {
-        // this.url = url ? url : (process.env.REACT_APP_URL_ROBOTS as string);
-        this.url = url
-            ? url
-            : 'https://two02210-w7ch5-mireya-chaparro.onrender.com/robots';
+        this.url = url ? url : (process.env.REACT_APP_URL_ROBOTS as string);
+        //SI COMENTO LA DE ABAJO, Y DEJO LA DE ARRIBA, PINTA, PERO NO TRAE NADA
+        // this.url = url
+        //     ? url
+        //     : 'https://two02210-w7ch5-mireya-chaparro.onrender.com/robots';
     }
 
     #createError(response: Response) {

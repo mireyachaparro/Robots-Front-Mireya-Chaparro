@@ -4,7 +4,7 @@ import { RobotRepository } from './robot.repository';
 describe('Given an instance of RobotApi Service', () => {
     let service: RobotRepository;
     beforeEach(() => {
-        service = new RobotRepository('http://prueba');
+        service = new RobotRepository('https://prueba');
         service = new RobotRepository();
     });
 
