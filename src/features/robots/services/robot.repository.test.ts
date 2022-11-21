@@ -4,7 +4,7 @@ import { RobotRepository } from './robot.repository';
 describe('Given an instance of RobotApi Service', () => {
     let service: RobotRepository;
     beforeEach(() => {
-        service = new RobotRepository('http://prueba');
+        service = new RobotRepository('https://prueba');
         service = new RobotRepository();
     });
 
@@ -83,7 +83,7 @@ describe('Given an instance of RobotApi Service', () => {
     });
 
     describe('When we use service.update()', () => {
-        const mockUpdateRobot = { id: 1, isComplete: true };
+        const mockUpdateRobot = { id_front: 1, speed: 3 };
         const mockFinalRobot = {
             ...new RobotModel('', '', 1, 1, ''),
             id: 1,
@@ -101,7 +101,7 @@ describe('Given an instance of RobotApi Service', () => {
             expect(result).toEqual(mockFinalRobot);
         });
         test(`Then if there are problems, it should throw an error`, async () => {
-            const mockUpdateRobot = { id: 0 };
+            const mockUpdateRobot = { id_front: 0 };
             const response = {
                 ok: false,
                 status: 500,

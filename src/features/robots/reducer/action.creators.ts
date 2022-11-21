@@ -8,6 +8,6 @@ export const addActionCreator = createAction<Robot>(actionTypes.add);
 
 export const updateActionCreator = createAction<Robot>(actionTypes.update);
 
-export const deleteActionCreator = createAction<Robot['id']>(
+export const deleteActionCreator = createAction<Robot['id_front']>(
     actionTypes.delete
 );

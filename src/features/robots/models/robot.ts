@@ -7,7 +7,7 @@ export type ProtoRobot = {
 };
 
 export type Robot = {
-    id: number;
+    id_front: number;
     name: string;
     img: string;
     speed: number;

@@ -5,17 +5,19 @@ export function RobotItem({ item }: { item: Robot }) {
     const { handleDelete } = useRobots();
 
     const handleClick = () => {
-        handleDelete(item.id);
+        handleDelete(item.id_front);
     };
 
     return (
-        <li className="">
-            <span>{item.id}</span>
-            <span>{item.img}</span>
-            <span>{item.name}</span>
-            <span className="button" onClick={handleClick} role="button">
+        <li>
+            <div>{item.id_front}</div>
+            <div>
+                <img src={item.img} alt={item.name} width="300px" />
+            </div>
+            <div>{item.name}</div>
+            <div className="button" onClick={handleClick} role="button">
                 🗑️
-            </span>
+            </div>
         </li>
     );
 }

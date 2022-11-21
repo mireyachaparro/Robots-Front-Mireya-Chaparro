@@ -4,7 +4,7 @@ import { robotReducer } from './reducer';
 
 describe('Given the function robotReducer', () => {
     const robotMock: Robot = {
-        id: 1,
+        id_front: 1,
         name: 'prueba',
         img: '123.jpg',
         speed: 1,
@@ -75,7 +75,7 @@ describe('Given the function robotReducer', () => {
         beforeEach(() => {
             action = {
                 type: actionTypes.delete,
-                payload: robotMock.id,
+                payload: robotMock.id_front,
             };
             state = [robotMock];
         });

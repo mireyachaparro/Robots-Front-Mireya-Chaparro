@@ -12,7 +12,7 @@ describe('Given RobotList component', () => {
         robots: [
             {
                 ...new RobotModel('prueba', '123.jpg', 1, 2, '2000'),
-                id: 1,
+                id_front: 1,
             },
         ],
     };
@@ -35,7 +35,7 @@ describe('Given RobotList component', () => {
             );
         });
         test('Then it should display the title', () => {
-            const title = new RegExp('prueba');
+            const title = new RegExp(/prueba/i);
             const element = screen.getByText(title);
             expect(element).toBeInTheDocument();
         });

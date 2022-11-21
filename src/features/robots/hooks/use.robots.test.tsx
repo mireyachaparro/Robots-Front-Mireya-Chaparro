@@ -25,10 +25,10 @@ describe('Given the custom hook userobots', () => {
         };
         mockRobot = {
             ...mockProtoRobot,
-            id: 1,
+            id_front: 1,
         };
         mockAddedRobot = {
-            id: 2,
+            id_front: 2,
             name: 'add prueba',
             img: '456.jpg',
             speed: 3,
@@ -36,7 +36,7 @@ describe('Given the custom hook userobots', () => {
             date: '2001',
         };
         mockUpdatedRobot = {
-            id: 1,
+            id_front: 1,
             name: 'update prueba',
             img: '123.jpg',
             speed: 1,
@@ -49,7 +49,7 @@ describe('Given the custom hook userobots', () => {
             robots: Array<Robot>;
             handleLoad: () => void;
             handleAdd: (newRobot: ProtoRobot) => void;
-            handleDelete: (id: Robot['id']) => void;
+            handleDelete: (id: Robot['id_front']) => void;
             handleUpdate: (updateRobot: Partial<Robot>) => void;
         }
 
