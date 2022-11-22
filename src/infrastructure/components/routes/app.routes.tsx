@@ -6,7 +6,7 @@ export function AppRoutes() {
     return (
         <Suspense>
             <Routes>
-                <Route path="home" element={<Robots></Robots>}></Route>
+                <Route path="" element={<Robots></Robots>}></Route>
                 <Route path="" element={<Robots></Robots>}></Route>
                 <Route path="*" element={<Navigate replace to="" />}></Route>
             </Routes>

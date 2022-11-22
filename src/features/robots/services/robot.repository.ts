@@ -28,11 +28,12 @@ export class RobotRepository implements Repository<Robot> {
 
     // create / post
     create(robot: Partial<Robot>): Promise<Robot> {
-        return fetch(this.url, {
+        return fetch(this.url + 'create', {
             method: 'POST',
             body: JSON.stringify(robot),
             headers: {
                 'content-type': 'application/json',
+                Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzN2JiZTU0OWNiMTIzZTM2MmMzZDk0MiIsIm5hbWUiOiJtaXJleWEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NjkxNDM1ODJ9.p1glWDqlEhnpZuuXRaReD4UhiP6uYFFqPpgJyJEDJn0`,
             },
         }).then((response) => {
             if (response.ok) return response.json();
@@ -42,8 +43,11 @@ export class RobotRepository implements Repository<Robot> {
 
     // delete
     delete(id: number): Promise<void> {
-        return fetch(`${this.url}/${id}`, {
+        return fetch(`${this.url}delete/${id}`, {
             method: 'DELETE',
+            headers: {
+                Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzN2JiZTU0OWNiMTIzZTM2MmMzZDk0MiIsIm5hbWUiOiJtaXJleWEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NjkxNDM1ODJ9.p1glWDqlEhnpZuuXRaReD4UhiP6uYFFqPpgJyJEDJn0`,
+            },
         }).then((response) => {
             if (!response.ok) throw this.#createError(response);
         });
