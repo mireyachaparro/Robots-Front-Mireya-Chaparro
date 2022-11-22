@@ -9,13 +9,16 @@ export function RobotItem({ item }: { item: Robot }) {
     };
 
     return (
-        <li>
-            <div>{item.id_front}</div>
-            <div>
+        <li className="listrobots--item">
+            <div className="listrobots--img">
                 <img src={item.img} alt={item.name} width="300px" />
             </div>
-            <div>{item.name}</div>
-            <div className="button" onClick={handleClick} role="button">
+            <div className="listrobots--name">{item.name}</div>
+            <div
+                className="listrobots--delete"
+                onClick={handleClick}
+                role="button"
+            >
                 🗑️
             </div>
         </li>

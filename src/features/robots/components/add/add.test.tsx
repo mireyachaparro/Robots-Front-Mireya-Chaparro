@@ -32,7 +32,7 @@ describe('Given Add component and render it', () => {
     });
     describe('When the component has been render', () => {
         test('Then it should display the title', () => {
-            const title = /Añadir/i;
+            const title = /Añade/i;
             const element = screen.getByText(title);
             expect(element).toBeInTheDocument();
         });

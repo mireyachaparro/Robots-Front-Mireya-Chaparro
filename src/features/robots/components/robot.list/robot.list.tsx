@@ -13,10 +13,10 @@ export function RobotsList() {
     }, [handleLoad]);
 
     return (
-        <section>
-            <h2>{title}</h2>
+        <section className="list">
+            <h2 className="title">{title}</h2>
             <Add></Add>
-            <ul>
+            <ul className="listrobots">
                 {robots.map((item: Robot) => (
                     <RobotItem key={item.name} item={item}></RobotItem>
                 ))}
