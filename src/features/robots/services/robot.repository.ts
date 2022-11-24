@@ -28,7 +28,7 @@ export class RobotRepository implements Repository<Robot> {
 
     // create / post
     create(robot: Partial<Robot>): Promise<Robot> {
-        return fetch(this.url + 'create', {
+        return fetch(this.url, {
             method: 'POST',
             body: JSON.stringify(robot),
             headers: {
