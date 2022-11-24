@@ -59,7 +59,7 @@ describe('Given an instance of RobotApi Service', () => {
 
     describe('When we use service.delete', () => {
         test(`Then if id are OK (1), it should return a Promise void`, async () => {
-            const itemId = 1;
+            const itemId = '1';
             const response = {
                 ok: true,
             };
@@ -69,7 +69,7 @@ describe('Given an instance of RobotApi Service', () => {
             expect(result).toBeUndefined();
         });
         test(`Then if there are problems, it should throw an error`, async () => {
-            const itemId = 0;
+            const itemId = '0';
             const response = {
                 ok: false,
                 status: 500,
@@ -83,11 +83,10 @@ describe('Given an instance of RobotApi Service', () => {
     });
 
     describe('When we use service.update()', () => {
-        const mockUpdateRobot = { id_front: 1, speed: 3 };
+        const mockUpdateRobot = { id_front: '1', speed: 3 };
         const mockFinalRobot = {
             ...new RobotModel('', '', 1, 1, ''),
-            id: 1,
-            isComplete: true,
+            id: '1',
         };
 
         test(`Then if all are OK, it should return a Promise of ...`, async () => {
@@ -101,7 +100,7 @@ describe('Given an instance of RobotApi Service', () => {
             expect(result).toEqual(mockFinalRobot);
         });
         test(`Then if there are problems, it should throw an error`, async () => {
-            const mockUpdateRobot = { id_front: 0 };
+            const mockUpdateRobot = { id: '0' };
             const response = {
                 ok: false,
                 status: 500,

@@ -42,8 +42,8 @@ export class RobotRepository implements Repository<Robot> {
     }
 
     // delete
-    delete(id: number): Promise<void> {
-        return fetch(`${this.url}delete/${id}`, {
+    delete(id: string): Promise<void> {
+        return fetch(`${this.url}/${id}`, {
             method: 'DELETE',
             headers: {
                 Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzN2JiZTU0OWNiMTIzZTM2MmMzZDk0MiIsIm5hbWUiOiJtaXJleWEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NjkxNDM1ODJ9.p1glWDqlEhnpZuuXRaReD4UhiP6uYFFqPpgJyJEDJn0`,
@@ -55,7 +55,7 @@ export class RobotRepository implements Repository<Robot> {
 
     // uptate / patch
     update(partialRobot: Partial<Robot>): Promise<Robot> {
-        return fetch(`${this.url}/${partialRobot.id_front}`, {
+        return fetch(`${this.url}/${partialRobot.id}`, {
             method: 'PATCH',
             body: JSON.stringify(partialRobot),
             headers: {

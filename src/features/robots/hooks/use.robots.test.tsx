@@ -25,10 +25,10 @@ describe('Given the custom hook userobots', () => {
         };
         mockRobot = {
             ...mockProtoRobot,
-            id_front: 1,
+            id: '1',
         };
         mockAddedRobot = {
-            id_front: 2,
+            id: '2',
             name: 'add prueba',
             img: '456.jpg',
             speed: 3,
@@ -36,7 +36,7 @@ describe('Given the custom hook userobots', () => {
             date: '2001',
         };
         mockUpdatedRobot = {
-            id_front: 1,
+            id: '1',
             name: 'update prueba',
             img: '123.jpg',
             speed: 1,
@@ -49,7 +49,7 @@ describe('Given the custom hook userobots', () => {
             robots: Array<Robot>;
             handleLoad: () => void;
             handleAdd: (newRobot: ProtoRobot) => void;
-            handleDelete: (id: Robot['id_front']) => void;
+            handleDelete: (id: Robot['id']) => void;
             handleUpdate: (updateRobot: Partial<Robot>) => void;
         }
 
@@ -111,7 +111,7 @@ describe('Given the custom hook userobots', () => {
         test(`Then the hock call to the repository to delete a robot
             and dispatch an action for delete the robot from the state`, async () => {
             expect(current.robots).toEqual([]);
-            current.handleDelete(1);
+            current.handleDelete('1');
             await waitFor(() => {
                 expect(RobotRepository.prototype.delete).toHaveBeenCalled();
             });

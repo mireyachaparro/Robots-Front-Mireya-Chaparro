@@ -35,10 +35,10 @@ export const useRobots = () => {
             .catch((error: Error) => console.log(error.name, error.message));
     };
 
-    const handleDelete = (id: number) => {
+    const handleDelete = (id_front: string) => {
         apiRobot
-            .delete(id)
-            .then(() => dispatcher(ac.deleteActionCreator(id)))
+            .delete(id_front)
+            .then(() => dispatcher(ac.deleteActionCreator(id_front)))
             .catch((error: Error) => console.log(error.name, error.message));
     };
 

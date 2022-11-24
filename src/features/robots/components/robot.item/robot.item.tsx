@@ -5,7 +5,7 @@ export function RobotItem({ item }: { item: Robot }) {
     const { handleDelete } = useRobots();
 
     const handleClick = () => {
-        handleDelete(item.id_front);
+        handleDelete(item.id);
     };
 
     return (
